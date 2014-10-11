@@ -1,0 +1,11 @@
+C:\PROGRAMS\ORYX\DataLog\DataLogAddon\DataLogAddon\bin\DataLogAddon.exe
+C:\PROGRAMS\ORYX\DataLog\DataLogAddon\DataLogAddon\bin\DataLogAddon.xml
+C:\PROGRAMS\ORYX\DataLog\DataLogAddon\DataLogAddon\obj\Release\AddOnInstaller.AddOnInstaller.BaseControl.resources
+C:\PROGRAMS\ORYX\DataLog\DataLogAddon\DataLogAddon\obj\Release\AddOnInstaller.AddOnInstaller.BaseForm.resources
+C:\PROGRAMS\ORYX\DataLog\DataLogAddon\DataLogAddon\obj\Release\AddOnInstaller.AddOnInstaller.InstallEndedControl.resources
+C:\PROGRAMS\ORYX\DataLog\DataLogAddon\DataLogAddon\obj\Release\AddOnInstaller.AddOnInstaller.InstallMainControl.resources
+C:\PROGRAMS\ORYX\DataLog\DataLogAddon\DataLogAddon\obj\Release\AddOnInstaller.AddOnInstaller.InstallPathControl.resources
+C:\PROGRAMS\ORYX\DataLog\DataLogAddon\DataLogAddon\obj\Release\AddOnInstaller.AddOnInstaller.UnInstallControl.resources
+C:\PROGRAMS\ORYX\DataLog\DataLogAddon\DataLogAddon\obj\Release\DataLogAddon.vbproj.GenerateResource.Cache
+C:\PROGRAMS\ORYX\DataLog\DataLogAddon\DataLogAddon\obj\Release\DataLogAddon.exe
+C:\PROGRAMS\ORYX\DataLog\DataLogAddon\DataLogAddon\obj\Release\DataLogAddon.xml

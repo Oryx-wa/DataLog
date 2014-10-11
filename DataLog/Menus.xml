@@ -1,0 +1,14 @@
+<Application>
+	<Menus>
+		<action type="remove">
+			<Menu UniqueID="DataLog.MonthlyDataLog"/>
+			<Menu UniqueID="DataLog.ACQ"/>
+		</action>
+	</Menus>
+	<Menus>
+		<action type="add">
+			<Menu Checked="0" Enabled="1" FatherUID="2048" String="Monthly Data Log" Type="1" UniqueID="DataLog.MonthlyDataLog" Image=""/>
+			<Menu Checked="0" Enabled="1" FatherUID="2048" String="Annual Contract Setup" Type="1" UniqueID="DataLog.ACQ" Image=""/>
+		</action>
+	</Menus>
+</Application>

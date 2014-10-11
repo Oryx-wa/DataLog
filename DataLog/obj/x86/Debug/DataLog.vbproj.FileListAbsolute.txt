@@ -1,0 +1,16 @@
+C:\PROGRAMS\ORYX\DataLog\DataLog\bin\x86\Debug\DataLog.exe
+C:\PROGRAMS\ORYX\DataLog\DataLog\bin\x86\Debug\SAPbouiCOM.dll
+C:\PROGRAMS\ORYX\DataLog\DataLog\bin\x86\Debug\SboAddOnBase.dll
+C:\PROGRAMS\ORYX\DataLog\DataLog\bin\x86\Debug\SboAddOnBase.pdb
+C:\PROGRAMS\ORYX\DataLog\DataLog\bin\x86\Debug\SboAddOnBase.xml
+C:\PROGRAMS\ORYX\DataLog\DataLog\obj\x86\Debug\DataLog.vbprojResolveAssemblyReference.cache
+C:\PROGRAMS\ORYX\DataLog\DataLog\obj\x86\Debug\Interop.SAPbobsCOM.dll
+C:\PROGRAMS\ORYX\DataLog\DataLog\obj\x86\Debug\DataLog.vbproj.ResolveComReference.cache
+C:\PROGRAMS\ORYX\DataLog\DataLog\obj\x86\Debug\DataLog.Resources.resources
+C:\PROGRAMS\ORYX\DataLog\DataLog\obj\x86\Debug\DataLog.vbproj.GenerateResource.Cache
+C:\PROGRAMS\ORYX\DataLog\DataLog\obj\x86\Debug\DataLog.exe
+C:\PROGRAMS\ORYX\DataLog\DataLog\obj\x86\Debug\DataLog.xml
+C:\PROGRAMS\ORYX\DataLog\DataLog\obj\x86\Debug\DataLog.pdb
+C:\PROGRAMS\ORYX\DataLog\DataLog\bin\x86\Debug\DataLog.exe.config
+C:\PROGRAMS\ORYX\DataLog\DataLog\bin\x86\Debug\DataLog.pdb
+C:\PROGRAMS\ORYX\DataLog\DataLog\bin\x86\Debug\DataLog.xml

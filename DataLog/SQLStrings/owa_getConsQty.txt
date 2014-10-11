@@ -1,0 +1,52 @@
+﻿declare @DocEntry int, @CustCode nvarchar(30),@Year nvarchar(4)
+
+select @DocEntry   = OWAPARAM1
+select @CustCode = 'OWAPARAM2'
+select @Year = 'OWAPARAM3'
+
+declare @FinalCorVol decimal(18,3),@AvgPresBar decimal(8,3),@TOP decimal(18,3),@DlyTOP decimal(18,3),
+@SignedPres decimal(8,3),@CorVol decimal(18,3),@LineId int,@TotConsQty decimal(18,3),@TotBilledQty decimal(18,3),
+@QtyBilled decimal(18,3),@ConsQty decimal(18,3)
+
+set @ConsQty=0
+set @TotBilledQty=0
+
+--get the signed pressure from the TOP Detail for the customer
+select @SignedPres=U_SgnPres,@TOP=U_TOP,@DlyTOP=U_TOP/330 from [@OWA_INVACQLINES] where code=@CustCode and U_Year=@Year
+
+declare recDataLogLines Cursor for
+		select U_CorVol,U_AvePress,LineId From [@OWA_INVMDLDET] Where DocEntry=@DocEntry order by LineId
+open recDataLogLines
+Fetch from recDataLogLines into @CorVol,@AvgPresBar,@LineId
+while @@Fetch_status=0
+begin
+		--subtract the Inital corvol from the Final corvol
+	begin
+		if @AvgPresBar-1 < @SignedPres
+			set @QtyBilled=isnull(@FinalCorVol,0)-isnull(@CorVol,0)
+		else
+			Set @QtyBilled=isnull(@DlyTOP,0)
+			
+			set @TotBilledQty=isnull(@TotBilledQty,0) + isnull(@QtyBilled,0)
+			
+		--get the final corrected volume
+	    select @FinalCorVol=isnull(U_CorVol,0) From [@OWA_INVMDLDET] Where DocEntry=@DocEntry and LineId=@LineId+1  order by LineId	  
+		--updates consumption lines
+		--checks if lines exists
+		if not exists(select * from [@OWA_INVMDLCONS] where docentry= @DocEntry)
+		--if @@rowcount=0    
+			insert into  [@OWA_INVMDLCONS] (docentry,object,lineid,visorder,U_qtycons,U_finalcorvol,
+							U_initcorvol,U_SignedPre,U_AvgPreBar,U_QtyBilled)
+			values (@DocEntry,'INVMDL',@LineId,@LineId,@FinalCorVol-@CorVol,@FinalCorVol,@CorVol,@SignedPres,@AvgPresBar,@QtyBilled)	  
+	end	
+	
+	Set @TotConsQty=isnull(@TotConsQty,0) + isnull(@FinalCorVol,0)-isnull(@CorVol,0)
+	
+  	Fetch next from recDataLogLines into @CorVol,@AvgPresBar,@LineId
+End
+
+select @TotConsQty ConsQty,@TotBilledQty BilledQty
+
+-- close the cursor
+CLOSE recDataLogLines
+DEALLOCATE recDataLogLines
